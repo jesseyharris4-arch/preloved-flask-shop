@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        {% for order in orders %}
+            <li>{{ order.product_name }} — R{{ order.total_price }} <small>(Status: {{ order.status }})</small></li>
+        {% else %}
+            <li>No items in your cart yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('checkout') }}">Proceed to Checkout</a>
+    {% include 'footer.html' %}
+</body>
+</html>

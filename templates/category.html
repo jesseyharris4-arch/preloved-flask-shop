@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<header>
+    <h1>{{ category }}</h1>
+    <p>Browse our {{ category }} collection.</p>
+</header>
+
+<section>
+    <ul>
+        {% if products %}
+            {% for product in products %}
+                <li>
+                    {% if product.image %}
+                        <img src="{{ url_for('static', filename='images/' ~ product.image) }}" alt="{{ product.name }}" width="150">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='images/' ~ category | lower | replace(' ', '-') ~ '.png') }}" alt="{{ category }}" width="150">
+                    {% endif %}
+                    {{ product.name }} - R{{ "%.2f"|format(product.price) }}
+                </li>
+            {% endfor %}
+        {% else %}
+            <li>No items yet in this category.</li>
+        {% endif %}
+    </ul>
+</section>
+{% endblock %}

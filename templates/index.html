@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Preloved Littles & Bigs</title>
+</head>
+<body>
+
+<h1>Welcome to Preloved Littles & Bigs</h1>
+
+{% for product in products %}
+<div>
+<h3>{{ product.name }}</h3>
+<img src="/static/images/{{ product.image }}" width="150">
+<p>R{{ product.price }}</p>
+
+<form action="/checkout" method="post">
+<input type="hidden" name="total" value="{{ product.price }}">
+<button type="submit">Buy Now</button>
+</form>
+
+</div>
+{% endfor %}
+
+</body>
+</html>

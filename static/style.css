@@ -1,0 +1,130 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fffaf5;
+    color: #333;
+    margin: 20px;
+}
+
+nav {
+    background-color: #a3c9a8;
+    padding: 10px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    color: #d97b66;
+}
+
+header {
+    background-color: #f9e0d9;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #d97b66;
+}
+
+button, .btn {
+    background-color: #a3c9a8;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background-color: #d97b66;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer h3 {
+    color: #d97b66;
+}
+
+.testimonial {
+    background-color: #f9e0d9;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.trust-grid div {
+    background-color: #fffaf5;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* ✅ CATEGORY GRID STYLING */
+.category-grid {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.category-grid h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #d97b66;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px; /* doubled size */
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.category-card img {
+  width: 200px; /* doubled size */
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.category-card span {
+  font-size: 20px;
+  color: #444;
+  font-weight: 600;
+}

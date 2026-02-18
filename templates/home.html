@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<img src="{{ url_for('static', filename='images/header_banner.png') }}" alt="Preloved Littles & Bigs Banner" style="width:100%; max-height:300px; object-fit:cover;">
+
+<header>
+    <h1>Preloved Littles & Bigs</h1>
+    <p>Second-hand children's clothes for conscious parents. Quality, affordability, and sustainability in every stitch.</p>
+    <!-- ❌ Buttons removed -->
+</header>
+
+<!-- ✅ CATEGORY GRID SECTION -->
+<section id="shop-by-category" class="category-grid">
+  <h2>Shop by Category</h2>
+  <div class="grid-container">
+    {% for category in ["Winter Wear","Summer Wear","Shoes","Accessories","Nappies","Toys"] %}
+      <a href="#{{ category | lower | replace(' ', '-') }}" class="category-card">
+        <img src="{{ url_for('static', filename='images/' ~ category | lower | replace(' ', '-') ~ '.png') }}" alt="{{ category }}">
+        <span>{{ category }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      {% for msg in messages %}
+        {% if msg == "cart" %}
+          notifyCart();
+        {% elif msg == "success" %}
+          notifySuccess();
+        {% elif msg == "error" %}
+          notifyError();
+        {% elif msg == "product_added" %}
+          notifyProductAdded();
+        {% elif msg == "thank_you" %}
+          notifyThankYou();
+        {% endif %}
+      {% endfor %}
+    </script>
+  {% endif %}
+{% endwith %}

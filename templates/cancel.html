@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Canceled</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Payment Canceled</h1>
+    <p>Your payment was canceled. Please try again.</p>
+    <a href="{{ url_for('cart') }}">Back to Cart</a>
+    {% include 'footer.html' %}
+</body>
+</html>

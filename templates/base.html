@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preloved Littles & Bigs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('sell_with_us') }}">Sell With Us</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('help_page') }}">Help</a></li>
+            <li><a href="{{ url_for('payment_options') }}">Payment Options</a></li>
+            <li><a href="{{ url_for('faqs') }}">FAQs</a></li>
+            <li><a href="{{ url_for('testimonials') }}">Testimonials</a></li>
+            <li><a href="{{ url_for('trust') }}">Trust</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <!-- ✅ Updated footer links -->
+    <footer>
+        <div>
+            <h3>Shop</h3>
+            <ul>
+                <li><a href="{{ url_for('category', name='Winter Wear') }}">Winter Wear</a></li>
+                <li><a href="{{ url_for('category', name='Summer Wear') }}">Summer Wear</a></li>
+                <li><a href="{{ url_for('category', name='Shoes') }}">Shoes</a></li>
+                <li><a href="{{ url_for('category', name='Accessories') }}">Accessories</a></li>
+                <li><a href="{{ url_for('category', name='Nappies') }}">Nappies</a></li>
+                <li><a href="{{ url_for('category', name='Toys') }}">Toys</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Help</h3>
+            <ul>
+                <li><a href="{{ url_for('help_page') }}">Getting Started</a></li>
+                <li><a href="{{ url_for('help_page') }}">How It Works</a></li>
+                <li><a href="{{ url_for('sell_with_us') }}">Sell With Us</a></li>
+                <li><a href="{{ url_for('payment_options') }}">Payment Options</a></li>
+                <li><a href="{{ url_for('faqs') }}">FAQs</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>Email: hello@prelovedlittlesandbigs.co.za</p>
+            <p>Phone: +27 64 646 1845</p>
+            <p>Location: Cape Town, South Africa</p>
+            <p><a href="https://facebook.com">Facebook</a></p>
+        </div>
+    </footer>
+</body>
+</html>
